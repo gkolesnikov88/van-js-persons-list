@@ -48,6 +48,13 @@ function sortByRichest() {
     updateDom();
 }
 
+// Filter millionaires
+function showMillionaires() {
+    data = data.filter(person => person.money > 1000000);
+
+    updateDom();
+}
+
 // Update DOM
 function updateDom(providedData = data) {
     // Clear main
@@ -69,3 +76,4 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click', getRandomUser);
 doubleMoneyBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
